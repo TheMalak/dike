@@ -1,10 +1,9 @@
 <div id="header" class="row align-items-center">
-  <div class="fit-content">
+  <div class="fit-content logo">
     <img [src]="headerLogo" alt="Dike consultoría en Puebla" />
   </div>
-  <div class="spacing"></div>
   <div class="col">
-    <nav class="nav1">
+    <nav *ngIf="showMenuServices" class="nav1">
       <ul class="d-flex">
         <li><a>ELECCIONES Y DEMOCRACIA</a></li>
         <li><a>CAPACITACIÓN</a></li>
@@ -12,7 +11,7 @@
         <li><a>JUSTICIA ELECTORAL</a></li>
       </ul>
     </nav>
-    <hr />
+    <hr *ngIf="showMenuServices" />
     <div>
       <nav class="nav2">
         <ul class="d-flex">

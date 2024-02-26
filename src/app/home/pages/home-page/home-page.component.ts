@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './home-page.component.sass'
 })
 export class HomePageComponent {
-
+  public backgroungImage: string = 'url("assets/hero.png")';
+  public servicesHeroImage: string = 'url("assets/services.png")';
 }
