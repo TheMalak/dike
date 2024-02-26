@@ -1,0 +1,148 @@
+$columns: 100
+
+@for $i from 1 through $columns
+  .col-#{$i}
+    width: calc((100% / #{$columns}) * #{$i})
+    box-sizing: border-box
+    position: relative
+
+@for $i from 1 through $columns
+  .col-tablet-#{$i}
+    @media (max-width: 1100px)
+      width: calc((100% / #{$columns}) * #{$i})
+      box-sizing: border-box
+      position: relative
+
+@for $i from 1 through $columns
+  .col-phablet-#{$i}
+    @media (max-width: 700px)
+      width: calc((100% / #{$columns}) * #{$i})
+      box-sizing: border-box
+      position: relative
+
+@for $i from 1 through $columns
+  .col-phone-#{$i}
+    @media (max-width: 468px)
+      width: calc((100% / #{$columns}) * #{$i})
+      box-sizing: border-box
+      position: relative
+
+@for $i from 1 through $columns
+  .col-desktop-#{$i}
+    @media (min-width: 1100px)
+      width: calc((100% / #{$columns}) * #{$i})
+      box-sizing: border-box
+      position: relative
+
+.col
+  flex: 1
+
+.col-desktop
+  @media (min-width: 1100px)
+    flex: 1
+
+.col
+  @media (min-width: 1100px)
+    flex: 1
+
+.col-tablet
+  @media (max-width: 1099px) and (min-width: 700px)
+    flex: 1
+
+.col-phablet
+  @media (max-width: 699px) and (min-width: 467px)
+    flex: 1
+
+.col-phone
+  @media (max-width: 466px) and (min-width: 0px)
+    flex: 1
+
+.d-none-desktop
+  @media (min-width: 1100px)
+    display: none !important
+
+.d-none-tablet
+  @media (max-width: 1099px)
+    display: none !important
+
+.d-none-phablet
+  @media (max-width: 1099px) and (min-width: 768px)
+    display: none !important
+
+.d-none-phone
+  @media (max-width: 467px)
+    display: none !important
+
+.separator-desktop-left
+  @media (min-width: 1100px)
+    margin-left: 0.7rem
+.separator-desktop-right
+  @media (min-width: 1100px)
+    margin-right: 0.7rem
+
+.separator-tablet-left
+  @media (max-width: 1100px)
+    margin-left: 0.7rem
+.separator-tablet-right
+  @media (max-width: 1100px)
+    margin-right: 0.7rem
+
+.separator-phablet-left
+  @media (max-width: 1099px) and (min-width: 768px)
+    margin-left: 0.7rem
+.separator-phablet-right
+  @media (max-width: 1099px) and (min-width: 768px)
+    margin-right: 0.7rem
+
+.separator-phone-left
+  @media (max-width: 467px)
+    margin-left: 0.7rem
+.separator-phone-right
+  @media (max-width: 467px)
+    margin-right: 0.7rem
+
+.padding-default
+  padding: 1.4rem
+
+.large-container
+  max-width: 1280px
+  width: 100%
+  padding: 0 1.4rem
+  box-sizing: border-box
+
+.medium-container
+  max-width: 768px
+  width: 100%
+  width: 100%
+  padding: 0 1.4rem
+  box-sizing: border-box
+
+.small-container
+  max-width: 600px
+  width: 100%
+  width: 100%
+  padding: 0 1.4rem
+  box-sizing: border-box
+
+.extra-small-container
+  max-width: 400px
+  width: 100%
+  width: 100%
+  padding: 0 1.4rem
+  box-sizing: border-box
+
+.small-container-no-padding
+  max-width: 600px
+  width: 100%
+  width: 100%
+
+.container
+  max-width: 1366px
+  @media (max-width: 1366px)
+    padding: 0 1.4rem
+
+.spacing
+  margin: 1rem
+
+.medium-spacing
+  margin: 0.5rem
