@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-hero',
+  selector: 'shared-hero',
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.sass'
 })
 export class HeroComponent {
-  public backgroungImage: string = 'assets/hero.png';
+  public backgroungImage: string = 'url("assets/hero.png")';
 }
