@@ -1,15 +1,45 @@
-<section id="consultants" class="row">
-  <div class="col-desktop-30">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus illo
-    culpa placeat esse minus. Debitis laborum aliquam architecto porro doloribus
-    tempore suscipit labore! Odio voluptates tenetur optio necessitatibus nemo
-    voluptatibus?
+<section id="consultants" class="row align-items-center">
+  <div class="col-desktop-40">
+    <div class="row">
+      <div class="col-80">
+        <h1>¿Necesitas un consultor profesional en puebla ?</h1>
+        <div class="spacing"></div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus
+          illo culpa placeat esse minus. Debitis laborum aliquam architecto
+          porro doloribus tempore suscipit labore! Odio voluptates tenetur optio
+          necessitatibus nemo voluptatibus?
+        </p>
+
+        <a
+          class="d-block text-decoration-none fit-content"
+          target="_blank"
+          [href]="whatsAppUrl"
+        >
+          <div class="spacing"></div>
+          <shared-button
+            [title]="'Solicitar informes'"
+            [imagePath]="'/assets/whatsApp-white.svg'"
+            [imageAlt]="'Contacto de Dike Consultores Puebla'"
+          ></shared-button>
+        </a>
+      </div>
+    </div>
   </div>
-  <div class="col-desktop-70">
-    <owl-carousel-o [options]="customOptions">
-      <ng-template carouselSlide>Slide 1</ng-template>
-      <ng-template carouselSlide>Slide 2</ng-template>
-      <ng-template carouselSlide>Slide 3</ng-template>
-    </owl-carousel-o>
+  <div
+    class="col-desktop-60 carousel-container"
+    [style.background-image]="backgroundImage"
+  >
+    <div class="row justify-content-center h-100 d-flex align-items-center">
+      <div class="col-80">
+        <owl-carousel-o [options]="customOptions">
+          <ng-template *ngFor="let consultant of consultants" carouselSlide>
+            <shared-card-consultant
+              [consultant]="consultant"
+            ></shared-card-consultant>
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+    </div>
   </div>
 </section>

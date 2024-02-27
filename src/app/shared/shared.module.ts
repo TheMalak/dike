@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ConsultantsComponent } from './components/consultants/consultants.component';
 import { ButtonComponent } from './components/button/button.component';
+import { CardConsultantComponent } from './components/card-consultant/card-consultant.component';
 
 
 
@@ -22,7 +23,8 @@ import { ButtonComponent } from './components/button/button.component';
     AboutComponent,
     ServicesComponent,
     ConsultantsComponent,
-    ButtonComponent
+    ButtonComponent,
+    CardConsultantComponent
   ],
   imports: [
     CommonModule,

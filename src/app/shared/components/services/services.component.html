@@ -22,7 +22,11 @@
         <br />
         <p [innerHTML]="this.currentService.description"></p>
         <br />
-        <a class="d-block text-decoration-none" href="">
+        <a
+          class="d-block text-decoration-none fit-content"
+          target="_blank"
+          [href]="whatsAppUrl"
+        >
           <shared-button
             [title]="'Solicitar informes'"
             [imagePath]="'/assets/whatsApp-white.svg'"

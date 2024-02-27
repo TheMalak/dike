@@ -14,6 +14,7 @@ export class ServicesComponent implements OnInit {
   public activeIndex: number = 0;
   private dataSubscription!: Subscription;
   public servicesNames: string[] = this.dikeService.names;
+  public whatsAppUrl: string = "https://wa.me/+522222124995?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios";
 
   constructor(private dikeService: DikeServicesService) { }
 
