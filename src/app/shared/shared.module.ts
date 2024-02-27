@@ -5,6 +5,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { HeroServicesComponent } from './components/hero-services/hero-services.component';
 import { AboutComponent } from './components/about/about.component';
+import { ServicesComponent } from './components/services/services.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -14,17 +16,20 @@ import { AboutComponent } from './components/about/about.component';
     FooterComponent,
     HeroComponent,
     HeroServicesComponent,
-    AboutComponent
+    AboutComponent,
+    ServicesComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
     HeroComponent,
     HeroServicesComponent,
-    AboutComponent
+    AboutComponent,
+    ServicesComponent
   ]
 })
 export class SharedModule { }

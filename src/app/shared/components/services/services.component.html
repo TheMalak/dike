@@ -1,0 +1,39 @@
+<section id="services" #servicesSection>
+  <br />
+  <div class="menu m-auto d-flex justify-content-center">
+    <nav>
+      <ul class="d-flex">
+        <li
+          (click)="changeService(i)"
+          [class.active]="i === activeIndex"
+          class="inria-serif-bold cursor-pointer"
+          *ngFor="let service of servicesNames; let i = index"
+        >
+          {{ service }}
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <br />
+  <div class="content m-auto">
+    <div class="row align-items-center">
+      <div class="col">
+        <h1>{{ this.currentService.fullName }}</h1>
+        <br />
+        <p [innerHTML]="this.currentService.description"></p>
+      </div>
+      <div class="spacing"></div>
+      <div class="col points">
+        <div class="content">
+          <ul>
+            <li
+              *ngFor="let point of this.currentService.points"
+              [innerHTML]="point"
+            ></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+</section>

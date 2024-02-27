@@ -11,24 +11,31 @@
     </div>
     <div class="col">
       <div class="row nav">
-        <div class="col">
-          <a href="">Elecciones y democrácia</a>
+        <div
+          class="col element cursor-pointer"
+          (click)="changeService(1); scroll('services')"
+        >
+          Capacitación
         </div>
         <div class="spacing"></div>
-        <div class="col">
-          <a href="">Fiscalización</a>
+        <div
+          class="col element cursor-pointer"
+          (click)="changeService(0); scroll('services')"
+        >
+          Fiscalización
         </div>
       </div>
       <br />
       <br />
       <div class="row nav">
-        <div class="col">
-          <a href="">Capacitación</a>
+        <div
+          class="col element cursor-pointer"
+          (click)="changeService(2); scroll('services')"
+        >
+          Justicia electoral
         </div>
         <div class="spacing"></div>
-        <div class="col">
-          <a href="">Justicia electoral</a>
-        </div>
+        <div class="col"></div>
       </div>
     </div>
   </div>

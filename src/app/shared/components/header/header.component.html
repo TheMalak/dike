@@ -1,24 +1,28 @@
 <div id="header" class="row align-items-center">
-  <div class="fit-content logo">
+  <div (click)="scroll('header')" class="cursor-pointer fit-content logo">
     <img [src]="headerLogo" alt="Dike consultoría en Puebla" />
   </div>
   <div class="col">
     <nav *ngIf="showMenuServices" class="nav1">
       <ul class="d-flex">
-        <li><a>ELECCIONES Y DEMOCRACIA</a></li>
-        <li><a>CAPACITACIÓN</a></li>
-        <li><a>FISCALIZACIÓN</a></li>
-        <li><a>JUSTICIA ELECTORAL</a></li>
+        <li
+          (click)="changeService(i); scroll('services')"
+          [class.active]="i === activeIndex"
+          class="open-sans cursor-pointer text-uppercase"
+          *ngFor="let service of servicesNames; let i = index"
+        >
+          {{ service }}
+        </li>
       </ul>
     </nav>
     <hr *ngIf="showMenuServices" />
     <div>
       <nav class="nav2">
         <ul class="d-flex">
-          <li><a>NUESTROS SERVICIOS</a></li>
-          <li><a>ACERCA DE NOSOTROS</a></li>
-          <li><a>DIKE CONSULTORES</a></li>
-          <li><a>CONTACTO</a></li>
+          <li (click)="scroll('services-hero')">NUESTROS SERVICIOS</li>
+          <li (click)="scroll('about')">ACERCA DE NOSOTROS</li>
+          <li>DIKE CONSULTORES</li>
+          <li>CONTACTO</li>
         </ul>
       </nav>
     </div>
