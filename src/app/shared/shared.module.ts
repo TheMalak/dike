@@ -7,6 +7,9 @@ import { HeroServicesComponent } from './components/hero-services/hero-services.
 import { AboutComponent } from './components/about/about.component';
 import { ServicesComponent } from './components/services/services.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { ConsultantsComponent } from './components/consultants/consultants.component';
+import { ButtonComponent } from './components/button/button.component';
 
 
 
@@ -17,11 +20,14 @@ import { HttpClientModule } from '@angular/common/http';
     HeroComponent,
     HeroServicesComponent,
     AboutComponent,
-    ServicesComponent
+    ServicesComponent,
+    ConsultantsComponent,
+    ButtonComponent
   ],
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    CarouselModule
   ],
   exports: [
     HeaderComponent,
@@ -29,7 +35,8 @@ import { HttpClientModule } from '@angular/common/http';
     HeroComponent,
     HeroServicesComponent,
     AboutComponent,
-    ServicesComponent
+    ServicesComponent,
+    ConsultantsComponent
   ]
 })
 export class SharedModule { }

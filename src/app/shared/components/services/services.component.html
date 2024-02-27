@@ -21,6 +21,14 @@
         <h1>{{ this.currentService.fullName }}</h1>
         <br />
         <p [innerHTML]="this.currentService.description"></p>
+        <br />
+        <a class="d-block text-decoration-none" href="">
+          <shared-button
+            [title]="'Solicitar informes'"
+            [imagePath]="'/assets/whatsApp-white.svg'"
+            [imageAlt]="'Contacto de Dike Consultores Puebla'"
+          ></shared-button>
+        </a>
       </div>
       <div class="spacing"></div>
       <div class="col points">
