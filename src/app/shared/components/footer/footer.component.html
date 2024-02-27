@@ -1,1 +1,19 @@
-<p>footer works!</p>
+<footer id="footer">
+  <div class="row align-items-center">
+    <div class="col fit-content">
+      <img [src]="headerLogo" alt="Diké onsultoría de Puebla" />
+    </div>
+    <div class="spacing"></div>
+    <div class="col">
+      <nav>
+        <ul class="d-flex justify-content-end">
+          <li (click)="scroll('services-hero')">NUESTROS SERVICIOS</li>
+          <li (click)="scroll('about')">ACERCA DE NOSOTROS</li>
+          <li (click)="scroll('consultants')">DIKE CONSULTORES</li>
+          <li (click)="scroll('contact')">CONTACTO</li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</footer>
+<br />

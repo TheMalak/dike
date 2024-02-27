@@ -11,6 +11,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ConsultantsComponent } from './components/consultants/consultants.component';
 import { ButtonComponent } from './components/button/button.component';
 import { CardConsultantComponent } from './components/card-consultant/card-consultant.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 
 
@@ -24,7 +25,8 @@ import { CardConsultantComponent } from './components/card-consultant/card-consu
     ServicesComponent,
     ConsultantsComponent,
     ButtonComponent,
-    CardConsultantComponent
+    CardConsultantComponent,
+    ContactComponent
   ],
   imports: [
     CommonModule,
@@ -38,7 +40,8 @@ import { CardConsultantComponent } from './components/card-consultant/card-consu
     HeroServicesComponent,
     AboutComponent,
     ServicesComponent,
-    ConsultantsComponent
+    ConsultantsComponent,
+    ContactComponent
   ]
 })
 export class SharedModule { }
