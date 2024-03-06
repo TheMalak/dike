@@ -1,0 +1,50 @@
+[
+  {
+    "id": 0,
+    "fullName": "Servicios de fiscalización en Puebla",
+    "name": "Fiscalización",
+    "description": "Contamos con un equipo de contadores expertos en la verificación del origen, destino y aplicación de recursos, lo que permite al candidato cumplir de manera oportuna con las obligaciones de fiscalización, <strong>evitando sanciones económicas o la posible pérdida del registro.</strong>",
+    "points": [
+      "Presentación de <strong>denuncias en materia de fiscalización</strong>",
+      "<strong> Defensa, contestación y seguimiento de denuncias</strong>",
+      "Contador responsable de finanzas del <strong>candidato y los partidos políticos</strong> para la fiscalización.",
+      "Acompañamiento en la entrega del informe de <strong>gastos de precampaña, campaña y obtención de apoyo ciudadano</strong>, así como en la contestación de los oficios de errores y omisiones.",
+      "Seguimiento para evitar un posible rebase del <strong>tope de gastos de precampaña, campaña y obtención de apoyo ciudadano.</strong>"
+    ]
+  },
+  {
+    "id": 1,
+    "fullName": "Servicios de capacitación en Puebla",
+    "name": "Capacitación",
+    "description": "La capacitación está dirigida al <strong>personal del candidato, incluyendo a los representantes propietarios y suplentes ante los diversos Consejos Municipales</strong>, así como a sus representantes de casilla. Esto les permitirá adquirir los conocimientos y herramientas necesarias para el desempeño efectivo de sus funciones",
+    "points": [
+      "Consejos Distritales y Municipales (INE-OPLE)",
+      "La figura de los representantes de partidos ante los diversos Consejos",
+      "Reglamento de sesiones de los Consejos",
+      "Derechos y Obligaciones de los representantes",
+      "Veda electoral",
+      "Documentación Electoral",
+      "Apertura de bodegas electorales",
+      "Cadena de custodia de paquetes electorales",
+      "Mecanismos de recolección de paquetes electorales",
+      "Jornada Electoral",
+      "Delitos Electorales",
+      "Medios de impugnación"
+    ]
+  },
+  {
+    "id": 2,
+    "fullName": "Servicios de justicia electoral en Puebla",
+    "name": "Justicia Electoral",
+    "description": "<strong>Atención permanente de problemas jurídicos, presentación y/o contestación de demandas</strong> de los diversos medios de impugnación contemplados en la leyes federales como locales, así como el seguimiento de cada una de las etapas procesales hasta el dictado de la sentencia firme",
+    "points": [
+      "Procedimientos sancionadores en materia de fiscalización",
+      "Procedimientos especiales sancionadores",
+      "Solicitudes de medidas cautelares",
+      "Quejas por violencia política de genero ",
+      "Juicio para la Protección de los derechos Político Electorales",
+      "Juicios de inconformidad",
+      "Juicio de Revisión Constitucional"
+    ]
+  }
+]
