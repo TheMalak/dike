@@ -1,6 +1,14 @@
-<section id="hero" class="row" [style.background-image]="backgroungImage">
+<section
+  id="hero"
+  class="row"
+  [style.background-image]="
+    mobileBackground ? backgroungImage : backgroungImageMobile
+  "
+>
   <div class="content row">
-    <div class="col-30 d-flex flex-direction-column justify-content-center">
+    <div
+      class="col-30 col-phablet-80 col-phone-100 d-flex flex-direction-column justify-content-center"
+    >
       <h1>Dedicados a un cliente a la vez.</h1>
       <p class="inria-serif-regular">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga dicta

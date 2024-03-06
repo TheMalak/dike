@@ -4,6 +4,8 @@
   background-position: top
   background-size: cover
   background-repeat: no-repeat
+  @media(max-width: 468px) and (min-width: 380px)
+    background-position: right
   .content
     padding: 3rem
     box-sizing: border-box
@@ -12,3 +14,16 @@
       margin-bottom: 1rem
     p
       font-size: 1.3rem
+  @media(max-width: 910px)
+    .content
+      h1
+        font-size: 1.5rem
+      p
+        font-size: 1rem
+  @media(max-width: 600px)
+    .content
+      background-color: rgb(245, 222, 97, 0.3)
+      h1
+        color: black !important
+      p
+        color: black !important

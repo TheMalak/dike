@@ -1,18 +1,27 @@
 #services
   background-color: #F8F8F8
   padding: 2rem
+  @media(max-width: 768px)
+    padding: 1rem
   .menu
     ul
+      padding-left: 0
+      justify-content: center
       li
+        margin-bottom: 0.8rem
         list-style: none
         margin-right: 1.5rem
         text-transform: uppercase
         padding-bottom: 0.3rem
+        &:last-child
+          margin-bottom: 0
     .active
       color: #002B56
       border-bottom: 2px solid #E0BF8C
   .content
     max-width: 90%
+    @media(max-width: 768px)
+      max-width: 100%
     .points
       background: white
       border-bottom: 5px solid #E0BF8C

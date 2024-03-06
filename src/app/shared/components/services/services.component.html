@@ -2,7 +2,7 @@
   <br />
   <div class="menu m-auto d-flex justify-content-center">
     <nav>
-      <ul class="d-flex">
+      <ul class="row">
         <li
           (click)="changeService(i)"
           [class.active]="i === activeIndex"
@@ -17,7 +17,7 @@
   <br />
   <div class="content m-auto">
     <div class="row align-items-center">
-      <div class="col">
+      <div class="col-desktop col-tablet col-phablet-100 col-phone-100">
         <h1>{{ this.currentService.fullName }}</h1>
         <br />
         <p [innerHTML]="this.currentService.description"></p>
@@ -35,7 +35,7 @@
         </a>
       </div>
       <div class="spacing"></div>
-      <div class="col points">
+      <div class="col-desktop col-tablet col-phablet-100 col-phone-100 points">
         <div class="content">
           <ul>
             <li
