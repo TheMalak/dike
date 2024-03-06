@@ -16,7 +16,7 @@ export class DikeServicesService {
   public indexChanged$: Subject<number> = new Subject<number>();
 
   constructor(private http: HttpClient) {
-    this.http.get<Service[]>('./assets/data/services.json').subscribe(data => {
+    this.http.get<Service[]>('/assets/data/services.json').subscribe(data => {
       this.data = data;
       this.names = this.data.map(service => service.name);
       this.currentService = this.data[0];

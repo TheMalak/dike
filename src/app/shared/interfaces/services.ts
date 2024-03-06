@@ -1,6 +1,6 @@
 export interface Service {
   id: number;
-  fullName?: string;
+  fullName: string;
   name: string;
   description: string;
   points: string[];

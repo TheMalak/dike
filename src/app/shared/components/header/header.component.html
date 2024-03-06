@@ -2,14 +2,14 @@
   <div (click)="scroll('header')" class="cursor-pointer fit-content logo">
     <img [src]="headerLogo" alt="Dike consultoría en Puebla" />
   </div>
-  <div class="col">
+  <div *ngIf="servicesNames | async as services" class="col">
     <nav *ngIf="showMenuServices" class="nav1">
       <ul class="d-flex">
         <li
           (click)="changeService(i); scroll('services')"
           [class.active]="i === activeIndex"
           class="open-sans cursor-pointer text-uppercase"
-          *ngFor="let service of servicesNames; let i = index"
+          *ngFor="let service of services; let i = index"
         >
           {{ service }}
         </li>
