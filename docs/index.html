@@ -1,16 +1,1431 @@
-<!DOCTYPE html><html lang="en" data-critters-container><head>
-    <meta charset="utf-8">
+<!DOCTYPE html>
+<html lang="en" data-critters-container>
+  <head>
+    <meta charset="utf-8" />
     <title>Dike</title>
-    <base href="/">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <style type="text/css">@font-face{font-family:'Inria Serif';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/inriaserif/v16/fC1lPYxPY3rXxEndZJAzN3Sldy39rw.woff2) format('woff2');unicode-range:U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Inria Serif';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/inriaserif/v16/fC1lPYxPY3rXxEndZJAzN3Srdy0.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Inria Serif';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/inriaserif/v16/fC14PYxPY3rXxEndZJAzN3wQUjjMjl2daw.woff2) format('woff2');unicode-range:U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Inria Serif';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/inriaserif/v16/fC14PYxPY3rXxEndZJAzN3wQUjjCjl0.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Open Sans';font-style:italic;font-weight:300 800;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWtE6F15M.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Open Sans';font-style:italic;font-weight:300 800;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWvU6F15M.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Open Sans';font-style:italic;font-weight:300 800;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWtU6F15M.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Open Sans';font-style:italic;font-weight:300 800;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWuk6F15M.woff2) format('woff2');unicode-range:U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;}@font-face{font-family:'Open Sans';font-style:italic;font-weight:300 800;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWu06F15M.woff2) format('woff2');unicode-range:U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;}@font-face{font-family:'Open Sans';font-style:italic;font-weight:300 800;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWxU6F15M.woff2) format('woff2');unicode-range:U+0302-0303, U+0305, U+0307-0308, U+0330, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2034-2037, U+2057, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2102, U+210A-210E, U+2110-2112, U+2115, U+2119-211D, U+2124, U+2128, U+212C-212D, U+212F-2131, U+2133-2138, U+213C-2140, U+2145-2149, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B6, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;}@font-face{font-family:'Open Sans';font-style:italic;font-weight:300 800;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqW106F15M.woff2) format('woff2');unicode-range:U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8B1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA88, U+1FA90-1FABD, U+1FABF-1FAC5, U+1FACE-1FADB, U+1FAE0-1FAE8, U+1FAF0-1FAF8, U+1FB00-1FBFF;}@font-face{font-family:'Open Sans';font-style:italic;font-weight:300 800;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWtk6F15M.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Open Sans';font-style:italic;font-weight:300 800;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWt06F15M.woff2) format('woff2');unicode-range:U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Open Sans';font-style:italic;font-weight:300 800;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWuU6F.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:300 800;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSKmu1aB.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:300 800;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSumu1aB.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:300 800;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSOmu1aB.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:300 800;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSymu1aB.woff2) format('woff2');unicode-range:U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:300 800;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS2mu1aB.woff2) format('woff2');unicode-range:U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:300 800;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTVOmu1aB.woff2) format('woff2');unicode-range:U+0302-0303, U+0305, U+0307-0308, U+0330, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2034-2037, U+2057, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2102, U+210A-210E, U+2110-2112, U+2115, U+2119-211D, U+2124, U+2128, U+212C-212D, U+212F-2131, U+2133-2138, U+213C-2140, U+2145-2149, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B6, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:300 800;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTUGmu1aB.woff2) format('woff2');unicode-range:U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8B1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA88, U+1FA90-1FABD, U+1FABF-1FAC5, U+1FACE-1FADB, U+1FAE0-1FAE8, U+1FAF0-1FAF8, U+1FB00-1FBFF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:300 800;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSCmu1aB.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:300 800;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSGmu1aB.woff2) format('woff2');unicode-range:U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:300 800;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-muw.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}</style>
-  <style>body{margin:0!important}.fit-content{width:fit-content!important}.text-decoration-none{text-decoration:none!important}.row{display:flex;flex-wrap:wrap}.cursor-pointer{cursor:pointer!important}.d-flex{display:flex}.justify-content-center{justify-content:center}.justify-content-end{justify-content:end}.flex-direction-column{flex-direction:column!important}.align-items-center{align-items:center}.m-auto{margin:0 auto!important}.d-block{display:block}.h-100{height:100%!important}.text-center{text-align:center!important}span{display:block!important}.col-30{width:30%;box-sizing:border-box;position:relative}.col-70{width:70%;box-sizing:border-box;position:relative}.col-80{width:80%;box-sizing:border-box;position:relative}@media (max-width: 1100px){.col-tablet-40{width:40%;box-sizing:border-box;position:relative}}@media (max-width: 1100px){.col-tablet-60{width:60%;box-sizing:border-box;position:relative}}@media (max-width: 1100px){.col-tablet-80{width:80%;box-sizing:border-box;position:relative}}@media (max-width: 1100px){.col-tablet-100{width:100%;box-sizing:border-box;position:relative}}@media (max-width: 700px){.col-phablet-80{width:80%;box-sizing:border-box;position:relative}}@media (max-width: 700px){.col-phablet-100{width:100%;box-sizing:border-box;position:relative}}@media (max-width: 468px){.col-phone-100{width:100%;box-sizing:border-box;position:relative}}@media (min-width: 1100px){.col-desktop-40{width:40%;box-sizing:border-box;position:relative}}@media (min-width: 1100px){.col-desktop-60{width:60%;box-sizing:border-box;position:relative}}@media (min-width: 1100px){.col-desktop-80{width:80%;box-sizing:border-box;position:relative}}.col{flex:1}@media (min-width: 1100px){.col-desktop{flex:1}}@media (min-width: 1100px){.col{flex:1}}@media (max-width: 1099px) and (min-width: 700px){.col-tablet{flex:1}}@media (max-width: 1099px){.d-none-tablet{display:none!important}}@media (max-width: 1099px) and (min-width: 768px){.d-none-phablet{display:none!important}}@media (max-width: 467px){.d-none-phone{display:none!important}}.container{max-width:1366px}@media (max-width: 1366px){.container{padding:0 1.4rem}}@media (max-width: 468px){.container{padding:0 1rem}}.spacing{margin:1rem}.medium-spacing{margin:.5rem}.extra-small-spacing{margin:.2rem}.inria-serif-regular{font-family:"Inria Serif",serif;font-weight:400;font-style:normal}.yellow-color{color:#e0bf8c!important}.white-color{color:#fff}.black-color{color:#000}body{font-family:Open Sans,sans-serif}h1,h2,h3{font-family:"Inria Serif",serif;font-weight:700;font-style:normal;padding:0;color:#002b56;margin:0}p{margin:0}.open-sans{font-family:Open Sans,sans-serif!important}.square{width:15px;height:15px;margin-right:10px;background-color:#e0bf8c}.spacing-section{margin:7rem}
-</style><link rel="stylesheet" href="styles-7XBPQE4O.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-7XBPQE4O.css"></noscript><style ng-app-id="ng">ul[_ngcontent-ng-c1886846326]{padding-left:1.4rem}ul[_ngcontent-ng-c1886846326]   li[_ngcontent-ng-c1886846326]{list-style:none;margin-right:.8rem;font-weight:700;cursor:pointer;font-size:13px}.logo[_ngcontent-ng-c1886846326]{padding-right:.5rem;border-right:1px solid #E9E9E9}.nav1[_ngcontent-ng-c1886846326]{color:#235484ad}.nav2[_ngcontent-ng-c1886846326]{color:#235484}.active[_ngcontent-ng-c1886846326]{color:#002b56;padding-bottom:.3rem;border-bottom:2px solid #E0BF8C}.principal-menu[_ngcontent-ng-c1886846326]{display:flex}@media (max-width: 768px){.principal-menu[_ngcontent-ng-c1886846326]{display:block}.principal-menu[_ngcontent-ng-c1886846326]   li[_ngcontent-ng-c1886846326]{margin-bottom:.7rem}}</style><style ng-app-id="ng">#hero[_ngcontent-ng-c2733585348]{width:100%;height:550px;background-position:top;background-size:cover;background-repeat:no-repeat}@media (max-width: 468px) and (min-width: 380px){#hero[_ngcontent-ng-c2733585348]{background-position:right}}#hero[_ngcontent-ng-c2733585348]   .content[_ngcontent-ng-c2733585348]{padding:3rem;box-sizing:border-box}#hero[_ngcontent-ng-c2733585348]   .content[_ngcontent-ng-c2733585348]   h1[_ngcontent-ng-c2733585348]{font-size:2.5rem;margin-bottom:1rem}#hero[_ngcontent-ng-c2733585348]   .content[_ngcontent-ng-c2733585348]   p[_ngcontent-ng-c2733585348]{font-size:1.3rem}@media (max-width: 910px){#hero[_ngcontent-ng-c2733585348]   .content[_ngcontent-ng-c2733585348]   h1[_ngcontent-ng-c2733585348]{font-size:1.5rem}#hero[_ngcontent-ng-c2733585348]   .content[_ngcontent-ng-c2733585348]   p[_ngcontent-ng-c2733585348]{font-size:1rem}}@media (max-width: 600px){#hero[_ngcontent-ng-c2733585348]   .content[_ngcontent-ng-c2733585348]{background-color:#f5de614d}#hero[_ngcontent-ng-c2733585348]   .content[_ngcontent-ng-c2733585348]   h1[_ngcontent-ng-c2733585348], #hero[_ngcontent-ng-c2733585348]   .content[_ngcontent-ng-c2733585348]   p[_ngcontent-ng-c2733585348]{color:#000!important}}</style><style ng-app-id="ng">#services-hero[_ngcontent-ng-c2397035668]{width:100%;height:250px;background-position:bottom;background-size:cover;background-repeat:no-repeat}#services-hero[_ngcontent-ng-c2397035668]   .services[_ngcontent-ng-c2397035668]{margin-top:1.4rem;margin-bottom:1rem}@media (max-width: 768px){#services-hero[_ngcontent-ng-c2397035668]   .services[_ngcontent-ng-c2397035668]   .element[_ngcontent-ng-c2397035668]{font-size:.8rem}}@media (max-width: 768px){#services-hero[_ngcontent-ng-c2397035668]{height:fit-content}}#services-hero[_ngcontent-ng-c2397035668]   .content[_ngcontent-ng-c2397035668]{background:#225383cc;padding:3rem;box-sizing:border-box;height:100%;display:flex;align-items:center;color:#fff!important}#services-hero[_ngcontent-ng-c2397035668]   .content[_ngcontent-ng-c2397035668]   h1[_ngcontent-ng-c2397035668]{max-width:50%}@media (max-width: 768px){#services-hero[_ngcontent-ng-c2397035668]   .content[_ngcontent-ng-c2397035668]{padding:3rem 2rem 1.4rem}#services-hero[_ngcontent-ng-c2397035668]   .content[_ngcontent-ng-c2397035668]   h1[_ngcontent-ng-c2397035668]{max-width:100%;font-size:1.2rem;margin-bottom:.3rem}}#services-hero[_ngcontent-ng-c2397035668]   .content[_ngcontent-ng-c2397035668]   a[_ngcontent-ng-c2397035668]{color:#fff;text-decoration:none}#services-hero[_ngcontent-ng-c2397035668]   .content[_ngcontent-ng-c2397035668]   .nav[_ngcontent-ng-c2397035668]   .element[_ngcontent-ng-c2397035668]{border-bottom:1px solid rgba(255,255,255,.14);font-family:"Inria Serif",serif}</style><style ng-app-id="ng">.about-image[_ngcontent-ng-c3212994603]{max-width:450px;height:520px;background-repeat:no-repeat;background-size:contain;width:100%}.featured-image[_ngcontent-ng-c3212994603]   img[_ngcontent-ng-c3212994603]{width:60px;height:60px;object-fit:cover;border-radius:50%}.featured-image[_ngcontent-ng-c3212994603]   h2[_ngcontent-ng-c3212994603]{font-size:1rem}.featured-image[_ngcontent-ng-c3212994603]   p[_ngcontent-ng-c3212994603]{font-size:.8rem}.data[_ngcontent-ng-c3212994603]{max-width:90%;padding-top:2rem;margin-bottom:2rem}@media (max-width: 700px){#about[_ngcontent-ng-c3212994603]{margin-top:2.5rem;flex-direction:column-reverse}#about[_ngcontent-ng-c3212994603]   .about-image[_ngcontent-ng-c3212994603]{max-width:100%;width:100%;height:500px;background-size:cover}#about[_ngcontent-ng-c3212994603]   .data[_ngcontent-ng-c3212994603]{max-width:100%;margin-top:0;margin-bottom:2rem}}</style><style ng-app-id="ng">#services[_ngcontent-ng-c2257528901]{background-color:#f8f8f8;padding:2rem}@media (max-width: 768px){#services[_ngcontent-ng-c2257528901]{padding:1rem}}#services[_ngcontent-ng-c2257528901]   .menu[_ngcontent-ng-c2257528901]   ul[_ngcontent-ng-c2257528901]{padding-left:0;justify-content:center}#services[_ngcontent-ng-c2257528901]   .menu[_ngcontent-ng-c2257528901]   ul[_ngcontent-ng-c2257528901]   li[_ngcontent-ng-c2257528901]{margin-bottom:.8rem;list-style:none;margin-right:1.5rem;text-transform:uppercase;padding-bottom:.3rem}#services[_ngcontent-ng-c2257528901]   .menu[_ngcontent-ng-c2257528901]   ul[_ngcontent-ng-c2257528901]   li[_ngcontent-ng-c2257528901]:last-child{margin-bottom:0}#services[_ngcontent-ng-c2257528901]   .menu[_ngcontent-ng-c2257528901]   .active[_ngcontent-ng-c2257528901]{color:#002b56;border-bottom:2px solid #E0BF8C}#services[_ngcontent-ng-c2257528901]   .content[_ngcontent-ng-c2257528901]{max-width:90%}@media (max-width: 768px){#services[_ngcontent-ng-c2257528901]   .content[_ngcontent-ng-c2257528901]{max-width:100%}}#services[_ngcontent-ng-c2257528901]   .content[_ngcontent-ng-c2257528901]   .points[_ngcontent-ng-c2257528901]{background:#fff;border-bottom:5px solid #E0BF8C;padding:2rem 1rem}#services[_ngcontent-ng-c2257528901]   .content[_ngcontent-ng-c2257528901]   .points[_ngcontent-ng-c2257528901]   ul[_ngcontent-ng-c2257528901]   li[_ngcontent-ng-c2257528901]{margin-bottom:1rem}</style><style ng-app-id="ng">.carousel-container[_ngcontent-ng-c3964902688]{height:600px;background-size:70% 100%;background-position:right center;background-repeat:no-repeat}.consultans-scroll[_ngcontent-ng-c3964902688]{overflow:scroll}@media (max-width: 768px){.consultans-scroll[_ngcontent-ng-c3964902688]{margin-top:2rem}}.consultant[_ngcontent-ng-c3964902688]{margin-right:1rem}@media (max-width: 700px){#consultants[_ngcontent-ng-c3964902688]   .data[_ngcontent-ng-c3964902688]{margin-top:2rem}}</style><style ng-app-id="ng">h2[_ngcontent-ng-c2020286987]{font-size:1.3rem}a[_ngcontent-ng-c2020286987]{color:#000!important}.contact-form[_ngcontent-ng-c2020286987]{background:#f8f8f8;padding:3rem}.contact-form[_ngcontent-ng-c2020286987]   input[_ngcontent-ng-c2020286987], .contact-form[_ngcontent-ng-c2020286987]   textarea[_ngcontent-ng-c2020286987]{margin-bottom:2rem;font-family:Open Sans,sans-serif;font-weight:600}.contact-form[_ngcontent-ng-c2020286987]   input[_ngcontent-ng-c2020286987]{height:50px;padding:1rem 2rem;box-sizing:border-box}.contact-form[_ngcontent-ng-c2020286987]   textarea[_ngcontent-ng-c2020286987]{padding:1rem 2rem;box-sizing:border-box}.contact-form[_ngcontent-ng-c2020286987]   label[_ngcontent-ng-c2020286987]{font-size:15px;font-weight:600;color:#002b56;display:block;margin-bottom:.5rem}@media (max-width: 1100px){#contact[_ngcontent-ng-c2020286987]{padding:3rem 0}}@media (max-width: 768px){#contact[_ngcontent-ng-c2020286987]   .content[_ngcontent-ng-c2020286987]{flex-direction:column-reverse}}</style><style ng-app-id="ng">ul[_ngcontent-ng-c816996868]{padding-left:0rem;display:flex}@media (max-width: 768px){ul[_ngcontent-ng-c816996868]{display:block;justify-content:center}}ul[_ngcontent-ng-c816996868]   li[_ngcontent-ng-c816996868]{list-style:none;margin-right:.8rem;font-weight:700;cursor:pointer;font-size:13px;color:#235484}@media (max-width: 768px){ul[_ngcontent-ng-c816996868]   li[_ngcontent-ng-c816996868]{margin-bottom:.8rem}ul[_ngcontent-ng-c816996868]   li[_ngcontent-ng-c816996868]:last-child{margin-bottom:0}}</style><style ng-app-id="ng">.button[_ngcontent-ng-c2181009031]{background:#e0bf8c;display:flex;width:fit-content;padding:1rem 1.5rem;align-items:center;text-decoration:none;text-transform:uppercase;color:#fff;font-weight:700;font-size:.9rem;transition:.3s all}.button[_ngcontent-ng-c2181009031]   img[_ngcontent-ng-c2181009031]{margin-right:.5rem;width:22px;height:auto}.button[_ngcontent-ng-c2181009031]:hover{transition:.3s all;background:#b6986b}</style></head>
-  <body><!--nghm-->
-    <app-root _nghost-ng-c1787895128 ng-version="17.2.2" ngh="1" ng-server-context="ssg"><div _ngcontent-ng-c1787895128 class="container m-auto"><shared-header _ngcontent-ng-c1787895128 _nghost-ng-c1886846326 ngh="0"><div _ngcontent-ng-c1886846326 id="header" class="row align-items-center"><div _ngcontent-ng-c1886846326 class="cursor-pointer fit-content logo"><img _ngcontent-ng-c1886846326 alt="Dike consultoría en Puebla" src="assets/logo.png"></div><div _ngcontent-ng-c1886846326 class="col"><!----><!----><div _ngcontent-ng-c1886846326><nav _ngcontent-ng-c1886846326 class="nav2"><ul _ngcontent-ng-c1886846326 class="d-flex principal-menu"><li _ngcontent-ng-c1886846326>NUESTROS SERVICIOS</li><li _ngcontent-ng-c1886846326>ACERCA DE NOSOTROS</li><li _ngcontent-ng-c1886846326>DIKE CONSULTORES</li><li _ngcontent-ng-c1886846326>CONTACTO</li></ul></nav></div></div></div></shared-header><shared-hero _ngcontent-ng-c1787895128 _nghost-ng-c2733585348 ngh="1"><section _ngcontent-ng-c2733585348 id="hero" class="row" style="background-image: url(&quot;assets/mobile-hero.jpeg&quot;);"><div _ngcontent-ng-c2733585348 class="content row"><div _ngcontent-ng-c2733585348 class="col-30 col-phablet-80 col-phone-100 d-flex flex-direction-column justify-content-center"><h1 _ngcontent-ng-c2733585348>Dedicados a un cliente a la vez.</h1><p _ngcontent-ng-c2733585348 class="inria-serif-regular"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga dicta cupiditate perferendis pariatur ipsa quis ut repellendus, nihil optio dolorem quod doloremque commodi voluptate praesentium. Quo voluptates iusto voluptatem quae! </p></div></div></section></shared-hero><shared-hero-services _ngcontent-ng-c1787895128 _nghost-ng-c2397035668 ngh="1"><section _ngcontent-ng-c2397035668 id="services-hero" style="background-image: url(&quot;assets/services.png&quot;);"><div _ngcontent-ng-c2397035668 class="content row"><div _ngcontent-ng-c2397035668 class="col-desktop col-tablet col-phablet-100 col-phone-100"><p _ngcontent-ng-c2397035668 class="what-text yellow-color"><strong _ngcontent-ng-c2397035668>Consultoría en Puebla</strong></p><div _ngcontent-ng-c2397035668 class="medium-spacing"></div><h1 _ngcontent-ng-c2397035668 class="white-color"> Consulta todos los servicios que tenemos para tí. </h1></div><div _ngcontent-ng-c2397035668 class="col-desktop col-tablet col-phablet-100 col-phone-100 services"><div _ngcontent-ng-c2397035668 class="row nav"><div _ngcontent-ng-c2397035668 class="col element cursor-pointer"> Capacitación </div><div _ngcontent-ng-c2397035668 class="spacing"></div><div _ngcontent-ng-c2397035668 class="col element cursor-pointer"> Fiscalización </div></div><br _ngcontent-ng-c2397035668><br _ngcontent-ng-c2397035668><div _ngcontent-ng-c2397035668 class="row nav"><div _ngcontent-ng-c2397035668 class="col element cursor-pointer"> Justicia electoral </div><div _ngcontent-ng-c2397035668 class="spacing"></div><div _ngcontent-ng-c2397035668 class="col"></div></div></div></div></section></shared-hero-services><shared-about _ngcontent-ng-c1787895128 _nghost-ng-c3212994603 ngh="1"><section _ngcontent-ng-c3212994603 id="about" class="row"><div _ngcontent-ng-c3212994603 class="col-desktop col-tablet col-phablet-100 col-phone-100 d-flex justify-content-center"><div _ngcontent-ng-c3212994603 class="about-image" style="background-image: url(&quot;assets/about.png&quot;);"></div></div><div _ngcontent-ng-c3212994603 class="col d-flex align-items-center justify-content-center flex-direction-column"><div _ngcontent-ng-c3212994603 class="data"><p _ngcontent-ng-c3212994603 class="what-text yellow-color"><strong _ngcontent-ng-c3212994603>Consultoría en Puebla</strong></p><div _ngcontent-ng-c3212994603 class="medium-spacing"></div><h1 _ngcontent-ng-c3212994603>Gente capacitada con más de 25 años de experiencia.</h1><div _ngcontent-ng-c3212994603 class="medium-spacing"></div><p _ngcontent-ng-c3212994603> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo deleniti modi nobis temporibus accusamus amet illum quod esse repudiandae expedita reiciendis, facere rem ullam accusantium illo consectetur dolorem? Expedita, harum! </p><div _ngcontent-ng-c3212994603 class="spacing"></div><div _ngcontent-ng-c3212994603 class="row"><div _ngcontent-ng-c3212994603 class="col"><div _ngcontent-ng-c3212994603 class="d-flex align-items-center"><div _ngcontent-ng-c3212994603 class="square"></div><h3 _ngcontent-ng-c3212994603>Servicios de asesoría</h3></div><div _ngcontent-ng-c3212994603 class="medium-spacing"></div><p _ngcontent-ng-c3212994603> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo deleniti modi nobis temporibus. </p></div><div _ngcontent-ng-c3212994603 class="medium-spacing"></div><div _ngcontent-ng-c3212994603 class="col"><div _ngcontent-ng-c3212994603 class="d-flex align-items-center"><div _ngcontent-ng-c3212994603 class="square"></div><h3 _ngcontent-ng-c3212994603>Servicios de asesoría</h3></div><div _ngcontent-ng-c3212994603 class="medium-spacing"></div><p _ngcontent-ng-c3212994603> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo deleniti modi nobis temporibus. </p></div></div><br _ngcontent-ng-c3212994603><br _ngcontent-ng-c3212994603><div _ngcontent-ng-c3212994603 class="featured-image d-flex align-items-center"><img _ngcontent-ng-c3212994603 alt="César, Director de Dike, consultoría en Puebla" src="https://www.shutterstock.com/image-photo/well-dressed-male-fixing-his-600nw-230575147.jpg"><div _ngcontent-ng-c3212994603 class="medium-spacing"></div><div _ngcontent-ng-c3212994603><h2 _ngcontent-ng-c3212994603 class="open-sans black-color">César Lorem Ipsum Dolor</h2><div _ngcontent-ng-c3212994603 class="extra-small-spacing"></div><p _ngcontent-ng-c3212994603>Director de Dike consultoría en Puebla</p></div></div></div></div></section></shared-about><br _ngcontent-ng-c1787895128><br _ngcontent-ng-c1787895128><shared-services _ngcontent-ng-c1787895128 _nghost-ng-c2257528901 ngh="3"><section _ngcontent-ng-c2257528901 id="services"><br _ngcontent-ng-c2257528901><div _ngcontent-ng-c2257528901 class="menu m-auto d-flex justify-content-center"><nav _ngcontent-ng-c2257528901><ul _ngcontent-ng-c2257528901 class="row"><!----></ul></nav></div><br _ngcontent-ng-c2257528901><div _ngcontent-ng-c2257528901 class="content m-auto"><div _ngcontent-ng-c2257528901 class="row align-items-center"><div _ngcontent-ng-c2257528901 class="col-desktop col-tablet col-phablet-100 col-phone-100"><h1 _ngcontent-ng-c2257528901><!--ngetn--></h1><br _ngcontent-ng-c2257528901><p _ngcontent-ng-c2257528901></p><br _ngcontent-ng-c2257528901><a _ngcontent-ng-c2257528901 target="_blank" class="d-block text-decoration-none fit-content"><shared-button _ngcontent-ng-c2257528901 _nghost-ng-c2181009031 ngh="2"><div _ngcontent-ng-c2181009031 class="button"><!----><span _ngcontent-ng-c2181009031><!--ngetn--></span></div></shared-button></a></div><div _ngcontent-ng-c2257528901 class="spacing"></div><div _ngcontent-ng-c2257528901 class="col-desktop col-tablet col-phablet-100 col-phone-100 points"><div _ngcontent-ng-c2257528901 class="content"><ul _ngcontent-ng-c2257528901><!----></ul></div></div></div></div><br _ngcontent-ng-c2257528901></section></shared-services><shared-consultants _ngcontent-ng-c1787895128 _nghost-ng-c3964902688 ngh="4"><section _ngcontent-ng-c3964902688 id="consultants" class="row align-items-center"><div _ngcontent-ng-c3964902688 class="data col-desktop-40 col-tablet-40 col-phablet-100 col-phone-100"><div _ngcontent-ng-c3964902688 class="row"><div _ngcontent-ng-c3964902688 class="col-80 col-tablet-100 col-phablet-100 col-phone-100"><h1 _ngcontent-ng-c3964902688>¿Necesitas un consultor profesional en puebla ?</h1><div _ngcontent-ng-c3964902688 class="spacing"></div><p _ngcontent-ng-c3964902688> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus illo culpa placeat esse minus. Debitis laborum aliquam architecto porro doloribus tempore suscipit labore! Odio voluptates tenetur optio necessitatibus nemo voluptatibus? </p><a _ngcontent-ng-c3964902688 target="_blank" class="d-block text-decoration-none fit-content"><div _ngcontent-ng-c3964902688 class="spacing"></div><shared-button _ngcontent-ng-c3964902688 _nghost-ng-c2181009031 ngh="2"><div _ngcontent-ng-c2181009031 class="button"><!----><span _ngcontent-ng-c2181009031><!--ngetn--></span></div></shared-button></a></div></div></div><div _ngcontent-ng-c3964902688 class="col-desktop-60 consultans-scroll col-tablet-60 col-phablet-100 col-phone-100 carousel-container"><div _ngcontent-ng-c3964902688 class="justify-content-center h-100 d-flex align-items-center"><div _ngcontent-ng-c3964902688 class="col-desktop-80 col-tablet-80 col-phablet-100 col-phone-100"><div _ngcontent-ng-c3964902688 class="d-flex"><!----></div></div></div></div></section></shared-consultants><div _ngcontent-ng-c1787895128 class="d-none-tablet spacing-section d-none-phablet d-none-phone"></div><shared-contact _ngcontent-ng-c1787895128 _nghost-ng-c2020286987 ngh="1"><section _ngcontent-ng-c2020286987 id="contact"><div _ngcontent-ng-c2020286987 class="d-flex content"><div _ngcontent-ng-c2020286987 class="col"><div _ngcontent-ng-c2020286987 class="contact-form d-flex flex-direction-column"><label _ngcontent-ng-c2020286987 for>Nombre</label><input _ngcontent-ng-c2020286987 type="text" name="name" id><label _ngcontent-ng-c2020286987 for>Correo electrónico</label><input _ngcontent-ng-c2020286987 type="email" name="name" id><label _ngcontent-ng-c2020286987 for>Mensaje</label><textarea _ngcontent-ng-c2020286987 name id cols="30" rows="5"></textarea><shared-button _ngcontent-ng-c2020286987 _nghost-ng-c2181009031 ngh="2"><div _ngcontent-ng-c2181009031 class="button"><!----><span _ngcontent-ng-c2181009031><!--ngetn--></span></div></shared-button></div></div><div _ngcontent-ng-c2020286987 class="spacing"></div><div _ngcontent-ng-c2020286987 class="col text-center"><div _ngcontent-ng-c2020286987 class="row justify-content-center"><div _ngcontent-ng-c2020286987 class="col-70"><h1 _ngcontent-ng-c2020286987>Resuelve hoy, estamos a una llamada de distancia</h1><br _ngcontent-ng-c2020286987><br _ngcontent-ng-c2020286987><h2 _ngcontent-ng-c2020286987 class="black-color"><a _ngcontent-ng-c2020286987 href> 15 Sur, número 7932, col. San José Mayorazgo. CP 72450 Puebla, Pue. </a></h2><br _ngcontent-ng-c2020286987><br _ngcontent-ng-c2020286987><h2 _ngcontent-ng-c2020286987 class="black-color"><a _ngcontent-ng-c2020286987 href="mailto:retodiario@gmail.com"> retodiario@hotmail.com </a></h2><br _ngcontent-ng-c2020286987><br _ngcontent-ng-c2020286987><h2 _ngcontent-ng-c2020286987 class="black-color"><a _ngcontent-ng-c2020286987 href="tel:+522224639334">2224639334</a></h2></div></div></div></div></section></shared-contact><br _ngcontent-ng-c1787895128><br _ngcontent-ng-c1787895128><shared-footer _ngcontent-ng-c1787895128 _nghost-ng-c816996868 ngh="1"><footer _ngcontent-ng-c816996868 id="footer"><div _ngcontent-ng-c816996868 class="row align-items-center"><div _ngcontent-ng-c816996868 class="fit-content"><img _ngcontent-ng-c816996868 alt="Diké onsultoría de Puebla"></div><div _ngcontent-ng-c816996868 class="spacing"></div><div _ngcontent-ng-c816996868 class="col"><nav _ngcontent-ng-c816996868><ul _ngcontent-ng-c816996868 class="justify-content-end"><li _ngcontent-ng-c816996868>NUESTROS SERVICIOS</li><li _ngcontent-ng-c816996868>ACERCA DE NOSOTROS</li><li _ngcontent-ng-c816996868>DIKE CONSULTORES</li><li _ngcontent-ng-c816996868>CONTACTO</li></ul></nav></div></div></footer><br _ngcontent-ng-c816996868></shared-footer></div></app-root>
-  <script src="polyfills-RT5I6R6G.js" type="module"></script><script src="main-XLVSE5BX.js" type="module"></script>
+    <base href="./" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <style type="text/css">
+      @font-face {
+        font-family: "Inria Serif";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inriaserif/v16/fC1lPYxPY3rXxEndZJAzN3Sldy39rw.woff2)
+          format("woff2");
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F,
+          U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+          U+A720-A7FF;
+      }
+      @font-face {
+        font-family: "Inria Serif";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inriaserif/v16/fC1lPYxPY3rXxEndZJAzN3Srdy0.woff2)
+          format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC,
+          U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: "Inria Serif";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inriaserif/v16/fC14PYxPY3rXxEndZJAzN3wQUjjMjl2daw.woff2)
+          format("woff2");
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F,
+          U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+          U+A720-A7FF;
+      }
+      @font-face {
+        font-family: "Inria Serif";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inriaserif/v16/fC14PYxPY3rXxEndZJAzN3wQUjjCjl0.woff2)
+          format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC,
+          U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: "Open Sans";
+        font-style: italic;
+        font-weight: 300 800;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/opensans/v40/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWtE6F15M.woff2)
+          format("woff2");
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF,
+          U+A640-A69F, U+FE2E-FE2F;
+      }
+      @font-face {
+        font-family: "Open Sans";
+        font-style: italic;
+        font-weight: 300 800;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/opensans/v40/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWvU6F15M.woff2)
+          format("woff2");
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+      }
+      @font-face {
+        font-family: "Open Sans";
+        font-style: italic;
+        font-weight: 300 800;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/opensans/v40/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWtU6F15M.woff2)
+          format("woff2");
+        unicode-range: U+1F00-1FFF;
+      }
+      @font-face {
+        font-family: "Open Sans";
+        font-style: italic;
+        font-weight: 300 800;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/opensans/v40/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWuk6F15M.woff2)
+          format("woff2");
+        unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C,
+          U+038E-03A1, U+03A3-03FF;
+      }
+      @font-face {
+        font-family: "Open Sans";
+        font-style: italic;
+        font-weight: 300 800;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/opensans/v40/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWu06F15M.woff2)
+          format("woff2");
+        unicode-range: U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+      }
+      @font-face {
+        font-family: "Open Sans";
+        font-style: italic;
+        font-weight: 300 800;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/opensans/v40/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWxU6F15M.woff2)
+          format("woff2");
+        unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0330, U+0391-03A1,
+          U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1,
+          U+03F4-03F5, U+2034-2037, U+2057, U+20D0-20DC, U+20E1, U+20E5-20EF,
+          U+2102, U+210A-210E, U+2110-2112, U+2115, U+2119-211D, U+2124, U+2128,
+          U+212C-212D, U+212F-2131, U+2133-2138, U+213C-2140, U+2145-2149,
+          U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211,
+          U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321,
+          U+2336-237A, U+237C, U+2395, U+239B-23B6, U+23D0, U+23DC-23E1,
+          U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC,
+          U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11,
+          U+2B30-2B4C, U+2BFE, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
+      }
+      @font-face {
+        font-family: "Open Sans";
+        font-style: italic;
+        font-weight: 300 800;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/opensans/v40/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqW106F15M.woff2)
+          format("woff2");
+        unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0,
+          U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF,
+          U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F,
+          U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922,
+          U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB,
+          U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB,
+          U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF,
+          U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E,
+          U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F,
+          U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE,
+          U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415,
+          U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449,
+          U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3,
+          U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF,
+          U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE,
+          U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A,
+          U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691,
+          U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC,
+          U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3,
+          U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847,
+          U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8B1,
+          U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9,
+          U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA88, U+1FA90-1FABD,
+          U+1FABF-1FAC5, U+1FACE-1FADB, U+1FAE0-1FAE8, U+1FAF0-1FAF8,
+          U+1FB00-1FBFF;
+      }
+      @font-face {
+        font-family: "Open Sans";
+        font-style: italic;
+        font-weight: 300 800;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/opensans/v40/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWtk6F15M.woff2)
+          format("woff2");
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169,
+          U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309,
+          U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+      }
+      @font-face {
+        font-family: "Open Sans";
+        font-style: italic;
+        font-weight: 300 800;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/opensans/v40/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWt06F15M.woff2)
+          format("woff2");
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F,
+          U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+          U+A720-A7FF;
+      }
+      @font-face {
+        font-family: "Open Sans";
+        font-style: italic;
+        font-weight: 300 800;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/opensans/v40/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWuU6F.woff2)
+          format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC,
+          U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: "Open Sans";
+        font-style: normal;
+        font-weight: 300 800;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSKmu1aB.woff2)
+          format("woff2");
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF,
+          U+A640-A69F, U+FE2E-FE2F;
+      }
+      @font-face {
+        font-family: "Open Sans";
+        font-style: normal;
+        font-weight: 300 800;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSumu1aB.woff2)
+          format("woff2");
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+      }
+      @font-face {
+        font-family: "Open Sans";
+        font-style: normal;
+        font-weight: 300 800;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSOmu1aB.woff2)
+          format("woff2");
+        unicode-range: U+1F00-1FFF;
+      }
+      @font-face {
+        font-family: "Open Sans";
+        font-style: normal;
+        font-weight: 300 800;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSymu1aB.woff2)
+          format("woff2");
+        unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C,
+          U+038E-03A1, U+03A3-03FF;
+      }
+      @font-face {
+        font-family: "Open Sans";
+        font-style: normal;
+        font-weight: 300 800;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS2mu1aB.woff2)
+          format("woff2");
+        unicode-range: U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+      }
+      @font-face {
+        font-family: "Open Sans";
+        font-style: normal;
+        font-weight: 300 800;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTVOmu1aB.woff2)
+          format("woff2");
+        unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0330, U+0391-03A1,
+          U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1,
+          U+03F4-03F5, U+2034-2037, U+2057, U+20D0-20DC, U+20E1, U+20E5-20EF,
+          U+2102, U+210A-210E, U+2110-2112, U+2115, U+2119-211D, U+2124, U+2128,
+          U+212C-212D, U+212F-2131, U+2133-2138, U+213C-2140, U+2145-2149,
+          U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211,
+          U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321,
+          U+2336-237A, U+237C, U+2395, U+239B-23B6, U+23D0, U+23DC-23E1,
+          U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC,
+          U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11,
+          U+2B30-2B4C, U+2BFE, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
+      }
+      @font-face {
+        font-family: "Open Sans";
+        font-style: normal;
+        font-weight: 300 800;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTUGmu1aB.woff2)
+          format("woff2");
+        unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0,
+          U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF,
+          U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F,
+          U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922,
+          U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB,
+          U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB,
+          U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF,
+          U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E,
+          U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F,
+          U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE,
+          U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415,
+          U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449,
+          U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3,
+          U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF,
+          U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE,
+          U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A,
+          U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691,
+          U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC,
+          U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3,
+          U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847,
+          U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8B1,
+          U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9,
+          U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA88, U+1FA90-1FABD,
+          U+1FABF-1FAC5, U+1FACE-1FADB, U+1FAE0-1FAE8, U+1FAF0-1FAF8,
+          U+1FB00-1FBFF;
+      }
+      @font-face {
+        font-family: "Open Sans";
+        font-style: normal;
+        font-weight: 300 800;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSCmu1aB.woff2)
+          format("woff2");
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169,
+          U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309,
+          U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+      }
+      @font-face {
+        font-family: "Open Sans";
+        font-style: normal;
+        font-weight: 300 800;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSGmu1aB.woff2)
+          format("woff2");
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F,
+          U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+          U+A720-A7FF;
+      }
+      @font-face {
+        font-family: "Open Sans";
+        font-style: normal;
+        font-weight: 300 800;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/opensans/v40/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-muw.woff2)
+          format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC,
+          U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+    </style>
+    <style>
+      body {
+        margin: 0 !important;
+      }
+      .fit-content {
+        width: fit-content !important;
+      }
+      .text-decoration-none {
+        text-decoration: none !important;
+      }
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .cursor-pointer {
+        cursor: pointer !important;
+      }
+      .d-flex {
+        display: flex;
+      }
+      .justify-content-center {
+        justify-content: center;
+      }
+      .justify-content-end {
+        justify-content: end;
+      }
+      .flex-direction-column {
+        flex-direction: column !important;
+      }
+      .align-items-center {
+        align-items: center;
+      }
+      .m-auto {
+        margin: 0 auto !important;
+      }
+      .d-block {
+        display: block;
+      }
+      .h-100 {
+        height: 100% !important;
+      }
+      .text-center {
+        text-align: center !important;
+      }
+      span {
+        display: block !important;
+      }
+      .col-30 {
+        width: 30%;
+        box-sizing: border-box;
+        position: relative;
+      }
+      .col-70 {
+        width: 70%;
+        box-sizing: border-box;
+        position: relative;
+      }
+      .col-80 {
+        width: 80%;
+        box-sizing: border-box;
+        position: relative;
+      }
+      @media (max-width: 1100px) {
+        .col-tablet-40 {
+          width: 40%;
+          box-sizing: border-box;
+          position: relative;
+        }
+      }
+      @media (max-width: 1100px) {
+        .col-tablet-60 {
+          width: 60%;
+          box-sizing: border-box;
+          position: relative;
+        }
+      }
+      @media (max-width: 1100px) {
+        .col-tablet-80 {
+          width: 80%;
+          box-sizing: border-box;
+          position: relative;
+        }
+      }
+      @media (max-width: 1100px) {
+        .col-tablet-100 {
+          width: 100%;
+          box-sizing: border-box;
+          position: relative;
+        }
+      }
+      @media (max-width: 700px) {
+        .col-phablet-80 {
+          width: 80%;
+          box-sizing: border-box;
+          position: relative;
+        }
+      }
+      @media (max-width: 700px) {
+        .col-phablet-100 {
+          width: 100%;
+          box-sizing: border-box;
+          position: relative;
+        }
+      }
+      @media (max-width: 468px) {
+        .col-phone-100 {
+          width: 100%;
+          box-sizing: border-box;
+          position: relative;
+        }
+      }
+      @media (min-width: 1100px) {
+        .col-desktop-40 {
+          width: 40%;
+          box-sizing: border-box;
+          position: relative;
+        }
+      }
+      @media (min-width: 1100px) {
+        .col-desktop-60 {
+          width: 60%;
+          box-sizing: border-box;
+          position: relative;
+        }
+      }
+      @media (min-width: 1100px) {
+        .col-desktop-80 {
+          width: 80%;
+          box-sizing: border-box;
+          position: relative;
+        }
+      }
+      .col {
+        flex: 1;
+      }
+      @media (min-width: 1100px) {
+        .col-desktop {
+          flex: 1;
+        }
+      }
+      @media (min-width: 1100px) {
+        .col {
+          flex: 1;
+        }
+      }
+      @media (max-width: 1099px) and (min-width: 700px) {
+        .col-tablet {
+          flex: 1;
+        }
+      }
+      @media (max-width: 1099px) {
+        .d-none-tablet {
+          display: none !important;
+        }
+      }
+      @media (max-width: 1099px) and (min-width: 768px) {
+        .d-none-phablet {
+          display: none !important;
+        }
+      }
+      @media (max-width: 467px) {
+        .d-none-phone {
+          display: none !important;
+        }
+      }
+      .container {
+        max-width: 1366px;
+      }
+      @media (max-width: 1366px) {
+        .container {
+          padding: 0 1.4rem;
+        }
+      }
+      @media (max-width: 468px) {
+        .container {
+          padding: 0 1rem;
+        }
+      }
+      .spacing {
+        margin: 1rem;
+      }
+      .medium-spacing {
+        margin: 0.5rem;
+      }
+      .extra-small-spacing {
+        margin: 0.2rem;
+      }
+      .inria-serif-regular {
+        font-family: "Inria Serif", serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .yellow-color {
+        color: #e0bf8c !important;
+      }
+      .white-color {
+        color: #fff;
+      }
+      .black-color {
+        color: #000;
+      }
+      body {
+        font-family: Open Sans, sans-serif;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Inria Serif", serif;
+        font-weight: 700;
+        font-style: normal;
+        padding: 0;
+        color: #002b56;
+        margin: 0;
+      }
+      p {
+        margin: 0;
+      }
+      .open-sans {
+        font-family: Open Sans, sans-serif !important;
+      }
+      .square {
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+        background-color: #e0bf8c;
+      }
+      .spacing-section {
+        margin: 7rem;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="styles-7XBPQE4O.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript><link rel="stylesheet" href="styles-7XBPQE4O.css" /></noscript>
+    <style ng-app-id="ng">
+      ul[_ngcontent-ng-c1886846326] {
+        padding-left: 1.4rem;
+      }
+      ul[_ngcontent-ng-c1886846326] li[_ngcontent-ng-c1886846326] {
+        list-style: none;
+        margin-right: 0.8rem;
+        font-weight: 700;
+        cursor: pointer;
+        font-size: 13px;
+      }
+      .logo[_ngcontent-ng-c1886846326] {
+        padding-right: 0.5rem;
+        border-right: 1px solid #e9e9e9;
+      }
+      .nav1[_ngcontent-ng-c1886846326] {
+        color: #235484ad;
+      }
+      .nav2[_ngcontent-ng-c1886846326] {
+        color: #235484;
+      }
+      .active[_ngcontent-ng-c1886846326] {
+        color: #002b56;
+        padding-bottom: 0.3rem;
+        border-bottom: 2px solid #e0bf8c;
+      }
+      .principal-menu[_ngcontent-ng-c1886846326] {
+        display: flex;
+      }
+      @media (max-width: 768px) {
+        .principal-menu[_ngcontent-ng-c1886846326] {
+          display: block;
+        }
+        .principal-menu[_ngcontent-ng-c1886846326]
+          li[_ngcontent-ng-c1886846326] {
+          margin-bottom: 0.7rem;
+        }
+      }
+    </style>
+    <style ng-app-id="ng">
+      #hero[_ngcontent-ng-c2733585348] {
+        width: 100%;
+        height: 550px;
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      @media (max-width: 468px) and (min-width: 380px) {
+        #hero[_ngcontent-ng-c2733585348] {
+          background-position: right;
+        }
+      }
+      #hero[_ngcontent-ng-c2733585348] .content[_ngcontent-ng-c2733585348] {
+        padding: 3rem;
+        box-sizing: border-box;
+      }
+      #hero[_ngcontent-ng-c2733585348]
+        .content[_ngcontent-ng-c2733585348]
+        h1[_ngcontent-ng-c2733585348] {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+      #hero[_ngcontent-ng-c2733585348]
+        .content[_ngcontent-ng-c2733585348]
+        p[_ngcontent-ng-c2733585348] {
+        font-size: 1.3rem;
+      }
+      @media (max-width: 910px) {
+        #hero[_ngcontent-ng-c2733585348]
+          .content[_ngcontent-ng-c2733585348]
+          h1[_ngcontent-ng-c2733585348] {
+          font-size: 1.5rem;
+        }
+        #hero[_ngcontent-ng-c2733585348]
+          .content[_ngcontent-ng-c2733585348]
+          p[_ngcontent-ng-c2733585348] {
+          font-size: 1rem;
+        }
+      }
+      @media (max-width: 600px) {
+        #hero[_ngcontent-ng-c2733585348] .content[_ngcontent-ng-c2733585348] {
+          background-color: #f5de614d;
+        }
+        #hero[_ngcontent-ng-c2733585348]
+          .content[_ngcontent-ng-c2733585348]
+          h1[_ngcontent-ng-c2733585348],
+        #hero[_ngcontent-ng-c2733585348]
+          .content[_ngcontent-ng-c2733585348]
+          p[_ngcontent-ng-c2733585348] {
+          color: #000 !important;
+        }
+      }
+    </style>
+    <style ng-app-id="ng">
+      #services-hero[_ngcontent-ng-c2397035668] {
+        width: 100%;
+        height: 250px;
+        background-position: bottom;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      #services-hero[_ngcontent-ng-c2397035668]
+        .services[_ngcontent-ng-c2397035668] {
+        margin-top: 1.4rem;
+        margin-bottom: 1rem;
+      }
+      @media (max-width: 768px) {
+        #services-hero[_ngcontent-ng-c2397035668]
+          .services[_ngcontent-ng-c2397035668]
+          .element[_ngcontent-ng-c2397035668] {
+          font-size: 0.8rem;
+        }
+      }
+      @media (max-width: 768px) {
+        #services-hero[_ngcontent-ng-c2397035668] {
+          height: fit-content;
+        }
+      }
+      #services-hero[_ngcontent-ng-c2397035668]
+        .content[_ngcontent-ng-c2397035668] {
+        background: #225383cc;
+        padding: 3rem;
+        box-sizing: border-box;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        color: #fff !important;
+      }
+      #services-hero[_ngcontent-ng-c2397035668]
+        .content[_ngcontent-ng-c2397035668]
+        h1[_ngcontent-ng-c2397035668] {
+        max-width: 50%;
+      }
+      @media (max-width: 768px) {
+        #services-hero[_ngcontent-ng-c2397035668]
+          .content[_ngcontent-ng-c2397035668] {
+          padding: 3rem 2rem 1.4rem;
+        }
+        #services-hero[_ngcontent-ng-c2397035668]
+          .content[_ngcontent-ng-c2397035668]
+          h1[_ngcontent-ng-c2397035668] {
+          max-width: 100%;
+          font-size: 1.2rem;
+          margin-bottom: 0.3rem;
+        }
+      }
+      #services-hero[_ngcontent-ng-c2397035668]
+        .content[_ngcontent-ng-c2397035668]
+        a[_ngcontent-ng-c2397035668] {
+        color: #fff;
+        text-decoration: none;
+      }
+      #services-hero[_ngcontent-ng-c2397035668]
+        .content[_ngcontent-ng-c2397035668]
+        .nav[_ngcontent-ng-c2397035668]
+        .element[_ngcontent-ng-c2397035668] {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+        font-family: "Inria Serif", serif;
+      }
+    </style>
+    <style ng-app-id="ng">
+      .about-image[_ngcontent-ng-c3212994603] {
+        max-width: 450px;
+        height: 520px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 100%;
+      }
+      .featured-image[_ngcontent-ng-c3212994603]
+        img[_ngcontent-ng-c3212994603] {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      .featured-image[_ngcontent-ng-c3212994603] h2[_ngcontent-ng-c3212994603] {
+        font-size: 1rem;
+      }
+      .featured-image[_ngcontent-ng-c3212994603] p[_ngcontent-ng-c3212994603] {
+        font-size: 0.8rem;
+      }
+      .data[_ngcontent-ng-c3212994603] {
+        max-width: 90%;
+        padding-top: 2rem;
+        margin-bottom: 2rem;
+      }
+      @media (max-width: 700px) {
+        #about[_ngcontent-ng-c3212994603] {
+          margin-top: 2.5rem;
+          flex-direction: column-reverse;
+        }
+        #about[_ngcontent-ng-c3212994603]
+          .about-image[_ngcontent-ng-c3212994603] {
+          max-width: 100%;
+          width: 100%;
+          height: 500px;
+          background-size: cover;
+        }
+        #about[_ngcontent-ng-c3212994603] .data[_ngcontent-ng-c3212994603] {
+          max-width: 100%;
+          margin-top: 0;
+          margin-bottom: 2rem;
+        }
+      }
+    </style>
+    <style ng-app-id="ng">
+      #services[_ngcontent-ng-c2257528901] {
+        background-color: #f8f8f8;
+        padding: 2rem;
+      }
+      @media (max-width: 768px) {
+        #services[_ngcontent-ng-c2257528901] {
+          padding: 1rem;
+        }
+      }
+      #services[_ngcontent-ng-c2257528901]
+        .menu[_ngcontent-ng-c2257528901]
+        ul[_ngcontent-ng-c2257528901] {
+        padding-left: 0;
+        justify-content: center;
+      }
+      #services[_ngcontent-ng-c2257528901]
+        .menu[_ngcontent-ng-c2257528901]
+        ul[_ngcontent-ng-c2257528901]
+        li[_ngcontent-ng-c2257528901] {
+        margin-bottom: 0.8rem;
+        list-style: none;
+        margin-right: 1.5rem;
+        text-transform: uppercase;
+        padding-bottom: 0.3rem;
+      }
+      #services[_ngcontent-ng-c2257528901]
+        .menu[_ngcontent-ng-c2257528901]
+        ul[_ngcontent-ng-c2257528901]
+        li[_ngcontent-ng-c2257528901]:last-child {
+        margin-bottom: 0;
+      }
+      #services[_ngcontent-ng-c2257528901]
+        .menu[_ngcontent-ng-c2257528901]
+        .active[_ngcontent-ng-c2257528901] {
+        color: #002b56;
+        border-bottom: 2px solid #e0bf8c;
+      }
+      #services[_ngcontent-ng-c2257528901] .content[_ngcontent-ng-c2257528901] {
+        max-width: 90%;
+      }
+      @media (max-width: 768px) {
+        #services[_ngcontent-ng-c2257528901]
+          .content[_ngcontent-ng-c2257528901] {
+          max-width: 100%;
+        }
+      }
+      #services[_ngcontent-ng-c2257528901]
+        .content[_ngcontent-ng-c2257528901]
+        .points[_ngcontent-ng-c2257528901] {
+        background: #fff;
+        border-bottom: 5px solid #e0bf8c;
+        padding: 2rem 1rem;
+      }
+      #services[_ngcontent-ng-c2257528901]
+        .content[_ngcontent-ng-c2257528901]
+        .points[_ngcontent-ng-c2257528901]
+        ul[_ngcontent-ng-c2257528901]
+        li[_ngcontent-ng-c2257528901] {
+        margin-bottom: 1rem;
+      }
+    </style>
+    <style ng-app-id="ng">
+      .carousel-container[_ngcontent-ng-c3964902688] {
+        height: 600px;
+        background-size: 70% 100%;
+        background-position: right center;
+        background-repeat: no-repeat;
+      }
+      .consultans-scroll[_ngcontent-ng-c3964902688] {
+        overflow: scroll;
+      }
+      @media (max-width: 768px) {
+        .consultans-scroll[_ngcontent-ng-c3964902688] {
+          margin-top: 2rem;
+        }
+      }
+      .consultant[_ngcontent-ng-c3964902688] {
+        margin-right: 1rem;
+      }
+      @media (max-width: 700px) {
+        #consultants[_ngcontent-ng-c3964902688]
+          .data[_ngcontent-ng-c3964902688] {
+          margin-top: 2rem;
+        }
+      }
+    </style>
+    <style ng-app-id="ng">
+      h2[_ngcontent-ng-c2020286987] {
+        font-size: 1.3rem;
+      }
+      a[_ngcontent-ng-c2020286987] {
+        color: #000 !important;
+      }
+      .contact-form[_ngcontent-ng-c2020286987] {
+        background: #f8f8f8;
+        padding: 3rem;
+      }
+      .contact-form[_ngcontent-ng-c2020286987] input[_ngcontent-ng-c2020286987],
+      .contact-form[_ngcontent-ng-c2020286987]
+        textarea[_ngcontent-ng-c2020286987] {
+        margin-bottom: 2rem;
+        font-family: Open Sans, sans-serif;
+        font-weight: 600;
+      }
+      .contact-form[_ngcontent-ng-c2020286987]
+        input[_ngcontent-ng-c2020286987] {
+        height: 50px;
+        padding: 1rem 2rem;
+        box-sizing: border-box;
+      }
+      .contact-form[_ngcontent-ng-c2020286987]
+        textarea[_ngcontent-ng-c2020286987] {
+        padding: 1rem 2rem;
+        box-sizing: border-box;
+      }
+      .contact-form[_ngcontent-ng-c2020286987]
+        label[_ngcontent-ng-c2020286987] {
+        font-size: 15px;
+        font-weight: 600;
+        color: #002b56;
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+      @media (max-width: 1100px) {
+        #contact[_ngcontent-ng-c2020286987] {
+          padding: 3rem 0;
+        }
+      }
+      @media (max-width: 768px) {
+        #contact[_ngcontent-ng-c2020286987]
+          .content[_ngcontent-ng-c2020286987] {
+          flex-direction: column-reverse;
+        }
+      }
+    </style>
+    <style ng-app-id="ng">
+      ul[_ngcontent-ng-c816996868] {
+        padding-left: 0rem;
+        display: flex;
+      }
+      @media (max-width: 768px) {
+        ul[_ngcontent-ng-c816996868] {
+          display: block;
+          justify-content: center;
+        }
+      }
+      ul[_ngcontent-ng-c816996868] li[_ngcontent-ng-c816996868] {
+        list-style: none;
+        margin-right: 0.8rem;
+        font-weight: 700;
+        cursor: pointer;
+        font-size: 13px;
+        color: #235484;
+      }
+      @media (max-width: 768px) {
+        ul[_ngcontent-ng-c816996868] li[_ngcontent-ng-c816996868] {
+          margin-bottom: 0.8rem;
+        }
+        ul[_ngcontent-ng-c816996868] li[_ngcontent-ng-c816996868]:last-child {
+          margin-bottom: 0;
+        }
+      }
+    </style>
+    <style ng-app-id="ng">
+      .button[_ngcontent-ng-c2181009031] {
+        background: #e0bf8c;
+        display: flex;
+        width: fit-content;
+        padding: 1rem 1.5rem;
+        align-items: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #fff;
+        font-weight: 700;
+        font-size: 0.9rem;
+        transition: 0.3s all;
+      }
+      .button[_ngcontent-ng-c2181009031] img[_ngcontent-ng-c2181009031] {
+        margin-right: 0.5rem;
+        width: 22px;
+        height: auto;
+      }
+      .button[_ngcontent-ng-c2181009031]:hover {
+        transition: 0.3s all;
+        background: #b6986b;
+      }
+    </style>
+  </head>
+  <body>
+    <!--nghm-->
+    <app-root
+      _nghost-ng-c1787895128
+      ng-version="17.2.2"
+      ngh="1"
+      ng-server-context="ssg"
+      ><div _ngcontent-ng-c1787895128 class="container m-auto">
+        <shared-header _ngcontent-ng-c1787895128 _nghost-ng-c1886846326 ngh="0"
+          ><div
+            _ngcontent-ng-c1886846326
+            id="header"
+            class="row align-items-center"
+          >
+            <div
+              _ngcontent-ng-c1886846326
+              class="cursor-pointer fit-content logo"
+            >
+              <img
+                _ngcontent-ng-c1886846326
+                alt="Dike consultoría en Puebla"
+                src="assets/logo.png"
+              />
+            </div>
+            <div _ngcontent-ng-c1886846326 class="col">
+              <!----><!---->
+              <div _ngcontent-ng-c1886846326>
+                <nav _ngcontent-ng-c1886846326 class="nav2">
+                  <ul _ngcontent-ng-c1886846326 class="d-flex principal-menu">
+                    <li _ngcontent-ng-c1886846326>NUESTROS SERVICIOS</li>
+                    <li _ngcontent-ng-c1886846326>ACERCA DE NOSOTROS</li>
+                    <li _ngcontent-ng-c1886846326>DIKE CONSULTORES</li>
+                    <li _ngcontent-ng-c1886846326>CONTACTO</li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div></shared-header
+        ><shared-hero _ngcontent-ng-c1787895128 _nghost-ng-c2733585348 ngh="1"
+          ><section
+            _ngcontent-ng-c2733585348
+            id="hero"
+            class="row"
+            style="background-image: url('assets/mobile-hero.jpeg')"
+          >
+            <div _ngcontent-ng-c2733585348 class="content row">
+              <div
+                _ngcontent-ng-c2733585348
+                class="col-30 col-phablet-80 col-phone-100 d-flex flex-direction-column justify-content-center"
+              >
+                <h1 _ngcontent-ng-c2733585348>
+                  Dedicados a un cliente a la vez.
+                </h1>
+                <p _ngcontent-ng-c2733585348 class="inria-serif-regular">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
+                  dicta cupiditate perferendis pariatur ipsa quis ut
+                  repellendus, nihil optio dolorem quod doloremque commodi
+                  voluptate praesentium. Quo voluptates iusto voluptatem quae!
+                </p>
+              </div>
+            </div>
+          </section></shared-hero
+        ><shared-hero-services
+          _ngcontent-ng-c1787895128
+          _nghost-ng-c2397035668
+          ngh="1"
+          ><section
+            _ngcontent-ng-c2397035668
+            id="services-hero"
+            style="background-image: url('assets/services.png')"
+          >
+            <div _ngcontent-ng-c2397035668 class="content row">
+              <div
+                _ngcontent-ng-c2397035668
+                class="col-desktop col-tablet col-phablet-100 col-phone-100"
+              >
+                <p _ngcontent-ng-c2397035668 class="what-text yellow-color">
+                  <strong _ngcontent-ng-c2397035668
+                    >Consultoría en Puebla</strong
+                  >
+                </p>
+                <div _ngcontent-ng-c2397035668 class="medium-spacing"></div>
+                <h1 _ngcontent-ng-c2397035668 class="white-color">
+                  Consulta todos los servicios que tenemos para tí.
+                </h1>
+              </div>
+              <div
+                _ngcontent-ng-c2397035668
+                class="col-desktop col-tablet col-phablet-100 col-phone-100 services"
+              >
+                <div _ngcontent-ng-c2397035668 class="row nav">
+                  <div
+                    _ngcontent-ng-c2397035668
+                    class="col element cursor-pointer"
+                  >
+                    Capacitación
+                  </div>
+                  <div _ngcontent-ng-c2397035668 class="spacing"></div>
+                  <div
+                    _ngcontent-ng-c2397035668
+                    class="col element cursor-pointer"
+                  >
+                    Fiscalización
+                  </div>
+                </div>
+                <br _ngcontent-ng-c2397035668 /><br _ngcontent-ng-c2397035668 />
+                <div _ngcontent-ng-c2397035668 class="row nav">
+                  <div
+                    _ngcontent-ng-c2397035668
+                    class="col element cursor-pointer"
+                  >
+                    Justicia electoral
+                  </div>
+                  <div _ngcontent-ng-c2397035668 class="spacing"></div>
+                  <div _ngcontent-ng-c2397035668 class="col"></div>
+                </div>
+              </div>
+            </div></section></shared-hero-services
+        ><shared-about _ngcontent-ng-c1787895128 _nghost-ng-c3212994603 ngh="1"
+          ><section _ngcontent-ng-c3212994603 id="about" class="row">
+            <div
+              _ngcontent-ng-c3212994603
+              class="col-desktop col-tablet col-phablet-100 col-phone-100 d-flex justify-content-center"
+            >
+              <div
+                _ngcontent-ng-c3212994603
+                class="about-image"
+                style="background-image: url('assets/about.png')"
+              ></div>
+            </div>
+            <div
+              _ngcontent-ng-c3212994603
+              class="col d-flex align-items-center justify-content-center flex-direction-column"
+            >
+              <div _ngcontent-ng-c3212994603 class="data">
+                <p _ngcontent-ng-c3212994603 class="what-text yellow-color">
+                  <strong _ngcontent-ng-c3212994603
+                    >Consultoría en Puebla</strong
+                  >
+                </p>
+                <div _ngcontent-ng-c3212994603 class="medium-spacing"></div>
+                <h1 _ngcontent-ng-c3212994603>
+                  Gente capacitada con más de 25 años de experiencia.
+                </h1>
+                <div _ngcontent-ng-c3212994603 class="medium-spacing"></div>
+                <p _ngcontent-ng-c3212994603>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo
+                  deleniti modi nobis temporibus accusamus amet illum quod esse
+                  repudiandae expedita reiciendis, facere rem ullam accusantium
+                  illo consectetur dolorem? Expedita, harum!
+                </p>
+                <div _ngcontent-ng-c3212994603 class="spacing"></div>
+                <div _ngcontent-ng-c3212994603 class="row">
+                  <div _ngcontent-ng-c3212994603 class="col">
+                    <div
+                      _ngcontent-ng-c3212994603
+                      class="d-flex align-items-center"
+                    >
+                      <div _ngcontent-ng-c3212994603 class="square"></div>
+                      <h3 _ngcontent-ng-c3212994603>Servicios de asesoría</h3>
+                    </div>
+                    <div _ngcontent-ng-c3212994603 class="medium-spacing"></div>
+                    <p _ngcontent-ng-c3212994603>
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Nemo deleniti modi nobis temporibus.
+                    </p>
+                  </div>
+                  <div _ngcontent-ng-c3212994603 class="medium-spacing"></div>
+                  <div _ngcontent-ng-c3212994603 class="col">
+                    <div
+                      _ngcontent-ng-c3212994603
+                      class="d-flex align-items-center"
+                    >
+                      <div _ngcontent-ng-c3212994603 class="square"></div>
+                      <h3 _ngcontent-ng-c3212994603>Servicios de asesoría</h3>
+                    </div>
+                    <div _ngcontent-ng-c3212994603 class="medium-spacing"></div>
+                    <p _ngcontent-ng-c3212994603>
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Nemo deleniti modi nobis temporibus.
+                    </p>
+                  </div>
+                </div>
+                <br _ngcontent-ng-c3212994603 /><br _ngcontent-ng-c3212994603 />
+                <div
+                  _ngcontent-ng-c3212994603
+                  class="featured-image d-flex align-items-center"
+                >
+                  <img
+                    _ngcontent-ng-c3212994603
+                    alt="César, Director de Dike, consultoría en Puebla"
+                    src="https://www.shutterstock.com/image-photo/well-dressed-male-fixing-his-600nw-230575147.jpg"
+                  />
+                  <div _ngcontent-ng-c3212994603 class="medium-spacing"></div>
+                  <div _ngcontent-ng-c3212994603>
+                    <h2 _ngcontent-ng-c3212994603 class="open-sans black-color">
+                      César Lorem Ipsum Dolor
+                    </h2>
+                    <div
+                      _ngcontent-ng-c3212994603
+                      class="extra-small-spacing"
+                    ></div>
+                    <p _ngcontent-ng-c3212994603>
+                      Director de Dike consultoría en Puebla
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section></shared-about
+        ><br _ngcontent-ng-c1787895128 /><br
+          _ngcontent-ng-c1787895128
+        /><shared-services
+          _ngcontent-ng-c1787895128
+          _nghost-ng-c2257528901
+          ngh="3"
+          ><section _ngcontent-ng-c2257528901 id="services">
+            <br _ngcontent-ng-c2257528901 />
+            <div
+              _ngcontent-ng-c2257528901
+              class="menu m-auto d-flex justify-content-center"
+            >
+              <nav _ngcontent-ng-c2257528901>
+                <ul _ngcontent-ng-c2257528901 class="row">
+                  <!---->
+                </ul>
+              </nav>
+            </div>
+            <br _ngcontent-ng-c2257528901 />
+            <div _ngcontent-ng-c2257528901 class="content m-auto">
+              <div _ngcontent-ng-c2257528901 class="row align-items-center">
+                <div
+                  _ngcontent-ng-c2257528901
+                  class="col-desktop col-tablet col-phablet-100 col-phone-100"
+                >
+                  <h1 _ngcontent-ng-c2257528901><!--ngetn--></h1>
+                  <br _ngcontent-ng-c2257528901 />
+                  <p _ngcontent-ng-c2257528901></p>
+                  <br _ngcontent-ng-c2257528901 /><a
+                    _ngcontent-ng-c2257528901
+                    target="_blank"
+                    class="d-block text-decoration-none fit-content"
+                    ><shared-button
+                      _ngcontent-ng-c2257528901
+                      _nghost-ng-c2181009031
+                      ngh="2"
+                      ><div _ngcontent-ng-c2181009031 class="button">
+                        <!----><span _ngcontent-ng-c2181009031
+                          ><!--ngetn--></span
+                        >
+                      </div></shared-button
+                    ></a
+                  >
+                </div>
+                <div _ngcontent-ng-c2257528901 class="spacing"></div>
+                <div
+                  _ngcontent-ng-c2257528901
+                  class="col-desktop col-tablet col-phablet-100 col-phone-100 points"
+                >
+                  <div _ngcontent-ng-c2257528901 class="content">
+                    <ul _ngcontent-ng-c2257528901>
+                      <!---->
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br _ngcontent-ng-c2257528901 /></section></shared-services
+        ><shared-consultants
+          _ngcontent-ng-c1787895128
+          _nghost-ng-c3964902688
+          ngh="4"
+          ><section
+            _ngcontent-ng-c3964902688
+            id="consultants"
+            class="row align-items-center"
+          >
+            <div
+              _ngcontent-ng-c3964902688
+              class="data col-desktop-40 col-tablet-40 col-phablet-100 col-phone-100"
+            >
+              <div _ngcontent-ng-c3964902688 class="row">
+                <div
+                  _ngcontent-ng-c3964902688
+                  class="col-80 col-tablet-100 col-phablet-100 col-phone-100"
+                >
+                  <h1 _ngcontent-ng-c3964902688>
+                    ¿Necesitas un consultor profesional en puebla ?
+                  </h1>
+                  <div _ngcontent-ng-c3964902688 class="spacing"></div>
+                  <p _ngcontent-ng-c3964902688>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Doloribus illo culpa placeat esse minus. Debitis laborum
+                    aliquam architecto porro doloribus tempore suscipit labore!
+                    Odio voluptates tenetur optio necessitatibus nemo
+                    voluptatibus?
+                  </p>
+                  <a
+                    _ngcontent-ng-c3964902688
+                    target="_blank"
+                    class="d-block text-decoration-none fit-content"
+                    ><div _ngcontent-ng-c3964902688 class="spacing"></div>
+                    <shared-button
+                      _ngcontent-ng-c3964902688
+                      _nghost-ng-c2181009031
+                      ngh="2"
+                      ><div _ngcontent-ng-c2181009031 class="button">
+                        <!----><span _ngcontent-ng-c2181009031
+                          ><!--ngetn--></span
+                        >
+                      </div></shared-button
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div
+              _ngcontent-ng-c3964902688
+              class="col-desktop-60 consultans-scroll col-tablet-60 col-phablet-100 col-phone-100 carousel-container"
+            >
+              <div
+                _ngcontent-ng-c3964902688
+                class="justify-content-center h-100 d-flex align-items-center"
+              >
+                <div
+                  _ngcontent-ng-c3964902688
+                  class="col-desktop-80 col-tablet-80 col-phablet-100 col-phone-100"
+                >
+                  <div _ngcontent-ng-c3964902688 class="d-flex"><!----></div>
+                </div>
+              </div>
+            </div>
+          </section></shared-consultants
+        >
+        <div
+          _ngcontent-ng-c1787895128
+          class="d-none-tablet spacing-section d-none-phablet d-none-phone"
+        ></div>
+        <shared-contact _ngcontent-ng-c1787895128 _nghost-ng-c2020286987 ngh="1"
+          ><section _ngcontent-ng-c2020286987 id="contact">
+            <div _ngcontent-ng-c2020286987 class="d-flex content">
+              <div _ngcontent-ng-c2020286987 class="col">
+                <div
+                  _ngcontent-ng-c2020286987
+                  class="contact-form d-flex flex-direction-column"
+                >
+                  <label _ngcontent-ng-c2020286987 for>Nombre</label
+                  ><input
+                    _ngcontent-ng-c2020286987
+                    type="text"
+                    name="name"
+                    id
+                  /><label _ngcontent-ng-c2020286987 for
+                    >Correo electrónico</label
+                  ><input
+                    _ngcontent-ng-c2020286987
+                    type="email"
+                    name="name"
+                    id
+                  /><label _ngcontent-ng-c2020286987 for>Mensaje</label
+                  ><textarea
+                    _ngcontent-ng-c2020286987
+                    name
+                    id
+                    cols="30"
+                    rows="5"
+                  ></textarea
+                  ><shared-button
+                    _ngcontent-ng-c2020286987
+                    _nghost-ng-c2181009031
+                    ngh="2"
+                    ><div _ngcontent-ng-c2181009031 class="button">
+                      <!----><span _ngcontent-ng-c2181009031><!--ngetn--></span>
+                    </div></shared-button
+                  >
+                </div>
+              </div>
+              <div _ngcontent-ng-c2020286987 class="spacing"></div>
+              <div _ngcontent-ng-c2020286987 class="col text-center">
+                <div
+                  _ngcontent-ng-c2020286987
+                  class="row justify-content-center"
+                >
+                  <div _ngcontent-ng-c2020286987 class="col-70">
+                    <h1 _ngcontent-ng-c2020286987>
+                      Resuelve hoy, estamos a una llamada de distancia
+                    </h1>
+                    <br _ngcontent-ng-c2020286987 /><br
+                      _ngcontent-ng-c2020286987
+                    />
+                    <h2 _ngcontent-ng-c2020286987 class="black-color">
+                      <a _ngcontent-ng-c2020286987 href>
+                        15 Sur, número 7932, col. San José Mayorazgo. CP 72450
+                        Puebla, Pue.
+                      </a>
+                    </h2>
+                    <br _ngcontent-ng-c2020286987 /><br
+                      _ngcontent-ng-c2020286987
+                    />
+                    <h2 _ngcontent-ng-c2020286987 class="black-color">
+                      <a
+                        _ngcontent-ng-c2020286987
+                        href="mailto:retodiario@gmail.com"
+                      >
+                        retodiario@hotmail.com
+                      </a>
+                    </h2>
+                    <br _ngcontent-ng-c2020286987 /><br
+                      _ngcontent-ng-c2020286987
+                    />
+                    <h2 _ngcontent-ng-c2020286987 class="black-color">
+                      <a _ngcontent-ng-c2020286987 href="tel:+522224639334"
+                        >2224639334</a
+                      >
+                    </h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section></shared-contact
+        ><br _ngcontent-ng-c1787895128 /><br
+          _ngcontent-ng-c1787895128
+        /><shared-footer _ngcontent-ng-c1787895128 _nghost-ng-c816996868 ngh="1"
+          ><footer _ngcontent-ng-c816996868 id="footer">
+            <div _ngcontent-ng-c816996868 class="row align-items-center">
+              <div _ngcontent-ng-c816996868 class="fit-content">
+                <img _ngcontent-ng-c816996868 alt="Diké onsultoría de Puebla" />
+              </div>
+              <div _ngcontent-ng-c816996868 class="spacing"></div>
+              <div _ngcontent-ng-c816996868 class="col">
+                <nav _ngcontent-ng-c816996868>
+                  <ul _ngcontent-ng-c816996868 class="justify-content-end">
+                    <li _ngcontent-ng-c816996868>NUESTROS SERVICIOS</li>
+                    <li _ngcontent-ng-c816996868>ACERCA DE NOSOTROS</li>
+                    <li _ngcontent-ng-c816996868>DIKE CONSULTORES</li>
+                    <li _ngcontent-ng-c816996868>CONTACTO</li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </footer>
+          <br _ngcontent-ng-c816996868
+        /></shared-footer></div
+    ></app-root>
+    <script src="polyfills-RT5I6R6G.js" type="module"></script>
+    <script src="main-XLVSE5BX.js" type="module"></script>
 
-<script id="ng-state" type="application/json">{"__nghData__":[{"t":{"4":"t0","5":"t1"},"c":{"4":[],"5":[]}},{},{"t":{"1":"t3"},"c":{"1":[]}},{"t":{"6":"t2","22":"t4"},"c":{"6":[],"22":[]}},{"t":{"16":"t5"},"c":{"16":[]}}]}</script></body></html>
+    <script id="ng-state" type="application/json">
+      {
+        "__nghData__": [
+          { "t": { "4": "t0", "5": "t1" }, "c": { "4": [], "5": [] } },
+          {},
+          { "t": { "1": "t3" }, "c": { "1": [] } },
+          { "t": { "6": "t2", "22": "t4" }, "c": { "6": [], "22": [] } },
+          { "t": { "16": "t5" }, "c": { "16": [] } }
+        ]
+      }
+    </script>
+  </body>
+</html>
