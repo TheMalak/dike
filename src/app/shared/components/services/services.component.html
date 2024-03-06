@@ -1,14 +1,16 @@
-hola mundo !
-<section *ngIf="currentService" id="services" #servicesSection>
+<section id="services" #servicesSection>
   <br />
-  <div class="menu m-auto d-flex justify-content-center">
+  <div
+    *ngIf="servicesNames | async as services"
+    class="menu m-auto d-flex justify-content-center"
+  >
     <nav>
       <ul class="row">
         <li
           (click)="changeService(i)"
           [class.active]="i === activeIndex"
           class="inria-serif-bold cursor-pointer"
-          *ngFor="let service of servicesNames; let i = index"
+          *ngFor="let service of services; let i = index"
         >
           {{ service }}
         </li>
