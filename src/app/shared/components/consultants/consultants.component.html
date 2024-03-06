@@ -1,7 +1,7 @@
 <section id="consultants" class="row align-items-center">
-  <div class="col-desktop-40">
+  <div class="data col-desktop-40 col-tablet-40 col-phablet-100 col-phone-100">
     <div class="row">
-      <div class="col-80">
+      <div class="col-80 col-tablet-100 col-phablet-100 col-phone-100">
         <h1>¿Necesitas un consultor profesional en puebla ?</h1>
         <div class="spacing"></div>
         <p>
@@ -27,18 +27,18 @@
     </div>
   </div>
   <div
-    class="col-desktop-60 carousel-container"
+    class="col-desktop-60 consultans-scroll col-tablet-60 col-phablet-100 col-phone-100 carousel-container"
     [style.background-image]="backgroundImage"
   >
-    <div class="row justify-content-center h-100 d-flex align-items-center">
-      <div class="col-80">
-        <owl-carousel-o [options]="customOptions">
-          <ng-template *ngFor="let consultant of consultants" carouselSlide>
+    <div class="justify-content-center h-100 d-flex align-items-center">
+      <div class="col-desktop-80 col-tablet-80 col-phablet-100 col-phone-100">
+        <div class="d-flex">
+          <div class="consultant" *ngFor="let consultant of consultants">
             <shared-card-consultant
               [consultant]="consultant"
             ></shared-card-consultant>
-          </ng-template>
-        </owl-carousel-o>
+          </div>
+        </div>
       </div>
     </div>
   </div>

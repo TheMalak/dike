@@ -1,5 +1,9 @@
 ul
-  padding-left: 1.4rem
+  padding-left: 0rem
+  display: flex
+  @media (max-width: 768px)
+    display: block
+    justify-content: center
   li
     list-style: none
     margin-right: 0.8rem
@@ -7,3 +11,7 @@ ul
     cursor: pointer
     font-size: 13px
     color: rgba(35, 84, 132, 1)
+    @media (max-width: 768px)
+      margin-bottom: 0.8rem
+      &:last-child
+        margin-bottom: 0
